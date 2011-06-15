@@ -41,6 +41,7 @@ struct MainWindow
 	GtkWidget*	bitrate;
 	GtkWidget*	ratetol;
 	GtkWidget*	crf;
+	GtkWidget*	latency;
 
 
 	pid_t		ffmpeg;

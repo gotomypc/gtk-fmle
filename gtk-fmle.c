@@ -88,6 +88,7 @@ void start_toggled(GtkWidget* widget, void* ptr)
 
 		{
 			int	w, h, x, y, fps;
+			float	latency;
 			const char* device;
 
 			w = gtk_spin_button_get_value(GTK_SPIN_BUTTON(main_window.inw));
@@ -96,10 +97,11 @@ void start_toggled(GtkWidget* widget, void* ptr)
 			y = gtk_spin_button_get_value(GTK_SPIN_BUTTON(main_window.offy));
 
 			fps = gtk_spin_button_get_value(GTK_SPIN_BUTTON(main_window.infps));
+			latency = gtk_spin_button_get_value(GTK_SPIN_BUTTON(main_window.latency))/1000.0;
 
 			device = gtk_entry_get_text(GTK_ENTRY(main_window.alsa));
 
-			sprintf(main_window.input, "-f x11grab -s %dx%d -r %d -i :0.0+%d,%d -f alsa -ac 2 -i %s", w, h, fps, x, y, device);
+			sprintf(main_window.input, "-f x11grab -s %dx%d -r %d -i :0.0+%d,%d -f alsa -ac 2 -itsoffset %.2f -i %s", w, h, fps, x, y, latency, device);
 		}
 
 		{
@@ -216,6 +218,7 @@ int main(int argc, char** argv)
 	main_window.bitrate 	= GTK_WIDGET(gtk_builder_get_object(builder, "bitrate"));
 	main_window.ratetol 	= GTK_WIDGET(gtk_builder_get_object(builder, "ratetol"));
 	main_window.crf 	= GTK_WIDGET(gtk_builder_get_object(builder, "crf"));
+	main_window.latency 	= GTK_WIDGET(gtk_builder_get_object(builder, "latency"));
 
 
 	main_window.select_window 	= GTK_WIDGET(gtk_builder_get_object(builder, "select_window"));
