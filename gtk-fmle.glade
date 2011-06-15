@@ -372,7 +372,7 @@
                 <child>
                   <object class="GtkTable" id="table2">
                     <property name="visible">True</property>
-                    <property name="n_rows">6</property>
+                    <property name="n_rows">7</property>
                     <property name="n_columns">4</property>
                     <property name="column_spacing">5</property>
                     <property name="row_spacing">5</property>
@@ -467,14 +467,15 @@
                         <property name="label" translatable="yes">Resolution</property>
                       </object>
                       <packing>
-                        <property name="top_attach">4</property>
-                        <property name="bottom_attach">5</property>
+                        <property name="top_attach">5</property>
+                        <property name="bottom_attach">6</property>
                       </packing>
                     </child>
                     <child>
                       <object class="GtkSpinButton" id="outw">
                         <property name="visible">True</property>
                         <property name="can_focus">True</property>
+                        <property name="tooltip_text" translatable="yes">Assign zero to use default value</property>
                         <property name="invisible_char">&#x25CF;</property>
                         <property name="adjustment">adjustment_outx</property>
                         <property name="numeric">True</property>
@@ -482,8 +483,8 @@
                       <packing>
                         <property name="left_attach">1</property>
                         <property name="right_attach">2</property>
-                        <property name="top_attach">4</property>
-                        <property name="bottom_attach">5</property>
+                        <property name="top_attach">5</property>
+                        <property name="bottom_attach">6</property>
                       </packing>
                     </child>
                     <child>
@@ -494,14 +495,15 @@
                       <packing>
                         <property name="left_attach">2</property>
                         <property name="right_attach">3</property>
-                        <property name="top_attach">4</property>
-                        <property name="bottom_attach">5</property>
+                        <property name="top_attach">5</property>
+                        <property name="bottom_attach">6</property>
                       </packing>
                     </child>
                     <child>
                       <object class="GtkSpinButton" id="outh">
                         <property name="visible">True</property>
                         <property name="can_focus">True</property>
+                        <property name="tooltip_text" translatable="yes">Assign zero to use default value</property>
                         <property name="invisible_char">&#x25CF;</property>
                         <property name="adjustment">adjustment_outy</property>
                         <property name="numeric">True</property>
@@ -509,8 +511,8 @@
                       <packing>
                         <property name="left_attach">3</property>
                         <property name="right_attach">4</property>
-                        <property name="top_attach">4</property>
-                        <property name="bottom_attach">5</property>
+                        <property name="top_attach">5</property>
+                        <property name="bottom_attach">6</property>
                       </packing>
                     </child>
                     <child>
@@ -519,14 +521,15 @@
                         <property name="label" translatable="yes">Frame rate</property>
                       </object>
                       <packing>
-                        <property name="top_attach">5</property>
-                        <property name="bottom_attach">6</property>
+                        <property name="top_attach">6</property>
+                        <property name="bottom_attach">7</property>
                       </packing>
                     </child>
                     <child>
                       <object class="GtkSpinButton" id="outfps">
                         <property name="visible">True</property>
                         <property name="can_focus">True</property>
+                        <property name="tooltip_text" translatable="yes">Assign zero to use default value</property>
                         <property name="invisible_char">&#x25CF;</property>
                         <property name="adjustment">adjustment_outfps</property>
                         <property name="numeric">True</property>
@@ -534,9 +537,40 @@
                       <packing>
                         <property name="left_attach">1</property>
                         <property name="right_attach">2</property>
-                        <property name="top_attach">5</property>
-                        <property name="bottom_attach">6</property>
+                        <property name="top_attach">6</property>
+                        <property name="bottom_attach">7</property>
                       </packing>
+                    </child>
+                    <child>
+                      <object class="GtkLabel" id="label23">
+                        <property name="visible">True</property>
+                        <property name="label" translatable="yes">CRF</property>
+                      </object>
+                      <packing>
+                        <property name="top_attach">4</property>
+                        <property name="bottom_attach">5</property>
+                      </packing>
+                    </child>
+                    <child>
+                      <object class="GtkSpinButton" id="crf">
+                        <property name="visible">True</property>
+                        <property name="can_focus">True</property>
+                        <property name="tooltip_text" translatable="yes">Assign non-zero value to disable constant bitrate mode</property>
+                        <property name="invisible_char">&#x25CF;</property>
+                        <property name="adjustment">adjustment_crf</property>
+                      </object>
+                      <packing>
+                        <property name="left_attach">1</property>
+                        <property name="right_attach">2</property>
+                        <property name="top_attach">4</property>
+                        <property name="bottom_attach">5</property>
+                      </packing>
+                    </child>
+                    <child>
+                      <placeholder/>
+                    </child>
+                    <child>
+                      <placeholder/>
                     </child>
                     <child>
                       <placeholder/>
@@ -636,6 +670,7 @@
                       <object class="GtkSpinButton" id="ar">
                         <property name="visible">True</property>
                         <property name="can_focus">True</property>
+                        <property name="tooltip_text" translatable="yes">Assign zero to use default value</property>
                         <property name="invisible_char">&#x25CF;</property>
                         <property name="adjustment">adjustment_ar</property>
                         <property name="numeric">True</property>
@@ -734,6 +769,10 @@
   <object class="GtkAdjustment" id="adjustment_infps">
     <property name="upper">100</property>
     <property name="value">60</property>
+    <property name="step_increment">1</property>
+  </object>
+  <object class="GtkAdjustment" id="adjustment_crf">
+    <property name="upper">51</property>
     <property name="step_increment">1</property>
   </object>
 </interface>

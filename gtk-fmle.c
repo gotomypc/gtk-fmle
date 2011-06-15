@@ -103,9 +103,10 @@ void start_toggled(GtkWidget* widget, void* ptr)
 		}
 
 		{
-			int w, h, f, b, bt;
+			int w, h, f, b, bt, crf;
 			char resol[32] = {};
 			char fps[16] = {};
+			char mode[64] = {};
 			const char* preset = NULL;
 
 			preset = gtk_entry_get_text(GTK_ENTRY(main_window.vpre));
@@ -115,6 +116,7 @@ void start_toggled(GtkWidget* widget, void* ptr)
 			f = gtk_spin_button_get_value(GTK_SPIN_BUTTON(main_window.outfps));
 			b = gtk_spin_button_get_value(GTK_SPIN_BUTTON(main_window.bitrate));
 			bt = gtk_spin_button_get_value(GTK_SPIN_BUTTON(main_window.ratetol));
+			crf = gtk_spin_button_get_value(GTK_SPIN_BUTTON(main_window.crf));
 
 
 			if(w&&h)
@@ -127,7 +129,15 @@ void start_toggled(GtkWidget* widget, void* ptr)
 				sprintf(fps, "-r %d", f);
 			}
 
-			sprintf(main_window.video, "-vcodec libx264 -vpre %s %s %s -b %dk -bt %dk", preset, resol, fps, b, bt);
+			if(crf)
+			{
+				sprintf(mode, "-crf %d", crf);
+			}else
+			{
+				sprintf(mode, "-b %dk -bt %dk", b, bt);
+			}
+
+			sprintf(main_window.video, "-vcodec libx264 -vpre %s %s %s %s", preset, resol, fps, mode);
 		}
 
 
@@ -205,6 +215,7 @@ int main(int argc, char** argv)
 	main_window.outfps 	= GTK_WIDGET(gtk_builder_get_object(builder, "outfps"));
 	main_window.bitrate 	= GTK_WIDGET(gtk_builder_get_object(builder, "bitrate"));
 	main_window.ratetol 	= GTK_WIDGET(gtk_builder_get_object(builder, "ratetol"));
+	main_window.crf 	= GTK_WIDGET(gtk_builder_get_object(builder, "crf"));
 
 
 	main_window.select_window 	= GTK_WIDGET(gtk_builder_get_object(builder, "select_window"));

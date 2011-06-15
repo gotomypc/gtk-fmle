@@ -58,4 +58,9 @@ msgstr "URL 網址"
 msgid "Stream"
 msgstr "串流密鑰"
 
+msgid "Assign zero to use default value"
+msgstr "0 表示預設值"
+
+msgid "Assign non-zero value to disable constant bitrate mode"
+msgstr "非零值表示關閉固定位元率，使用固定畫質模式"
 
