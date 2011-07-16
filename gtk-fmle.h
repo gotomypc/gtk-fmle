@@ -44,12 +44,17 @@ struct MainWindow
 	GtkWidget*	latency;
 
 
+	GtkWidget*	mp4;
+	GtkWidget*	out_path;
+	GtkWidget*	out_filename;
+
 	pid_t		ffmpeg;
 
 	char		input[256];
 	char		video[256];
 	char		audio[256];
 	char		output[256];
+	char		file_output[256];
 	char		url[256];
 
 };

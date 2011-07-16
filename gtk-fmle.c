@@ -84,8 +84,7 @@ void start_toggled(GtkWidget* widget, void* ptr)
 
 	if(gtk_toggle_button_get_active(GTK_TOGGLE_BUTTON(widget)))
 	{
-		//strcpy(command, "ffmpeg ");
-
+		/* x11grab settings */
 		{
 			int	w, h, x, y, fps;
 			float	latency;
@@ -104,6 +103,7 @@ void start_toggled(GtkWidget* widget, void* ptr)
 			sprintf(main_window.input, "-f x11grab -s %dx%d -r %d -i :0.0+%d,%d -f alsa -ac 2 -itsoffset %.2f -i %s", w, h, fps, x, y, latency, device);
 		}
 
+		/* x264 settings */
 		{
 			int w, h, f, b, bt, crf;
 			char resol[32] = {};
@@ -142,7 +142,7 @@ void start_toggled(GtkWidget* widget, void* ptr)
 			sprintf(main_window.video, "-vcodec libx264 -vpre %s %s %s %s", preset, resol, fps, mode);
 		}
 
-
+		/* AAC settings */
 		{
 			int ab, ar;
 			char rate[16] = {};
@@ -159,21 +159,30 @@ void start_toggled(GtkWidget* widget, void* ptr)
 
 		}
 
+		/* Flash Media Server settings */
 		{
 			const char* url = NULL;
 			const char* key = NULL;
-
 
 			url = gtk_entry_get_text(GTK_ENTRY(main_window.fmsurl));
 			key = gtk_entry_get_text(GTK_ENTRY(main_window.fmskey));
 
 
-
 			sprintf(main_window.url, "-f flv \"%s/%s flashver=FMLE/3.0%%20(compatible;%%20FMSc/1.0)\"", url, key);
 		}
 
+		/* File output settings */
+		{
+			int enable_mp4;
 
-		sprintf(command, "ffmpeg %s %s %s %s -threads 0 %s </dev/null", main_window.input, main_window.video, main_window.audio, main_window.output, main_window.url);
+			enable_mp4 = gtk_toggle_button_get_active(GTK_TOGGLE_BUTTON(main_window.mp4));
+			main_window.file_output[0] = 0;
+			if(enable_mp4)
+				sprintf(main_window.url, "-f mp4 %s/%s", gtk_file_chooser_get_current_folder(GTK_FILE_CHOOSER(main_window.out_path)), gtk_entry_get_text(GTK_ENTRY(main_window.out_filename)));
+
+		}
+
+		sprintf(command, "ffmpeg %s %s %s -threads 0 %s %s </dev/null", main_window.input, main_window.video, main_window.audio, main_window.url, ""/*main_window.file_output*/);
 		main_window.ffmpeg = run_cmd(command);
 		puts(command);
 	}
@@ -219,6 +228,9 @@ int main(int argc, char** argv)
 	main_window.ratetol 	= GTK_WIDGET(gtk_builder_get_object(builder, "ratetol"));
 	main_window.crf 	= GTK_WIDGET(gtk_builder_get_object(builder, "crf"));
 	main_window.latency 	= GTK_WIDGET(gtk_builder_get_object(builder, "latency"));
+	main_window.mp4 	= GTK_WIDGET(gtk_builder_get_object(builder, "mp4"));
+	main_window.out_path 	= GTK_WIDGET(gtk_builder_get_object(builder, "out_path"));
+	main_window.out_filename= GTK_WIDGET(gtk_builder_get_object(builder, "out_filename"));
 
 
 	main_window.select_window 	= GTK_WIDGET(gtk_builder_get_object(builder, "select_window"));

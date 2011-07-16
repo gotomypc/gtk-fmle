@@ -7,6 +7,9 @@ msgstr "<b>Flash 媒體伺服器</b>"
 msgid "<b>Input</b>"
 msgstr "<b>輸入</b>"
 
+msgid "<b>File Output</b>"
+msgstr "<b>檔案輸出</b>"
+
 msgid "Mode"
 msgstr "模式"
 
@@ -69,4 +72,13 @@ msgstr "延遲"
 
 msgid "Unit: ms"
 msgstr "單位: 毫秒"
+
+msgid "Write to MP4 file"
+msgstr "寫到 MP4 檔"
+
+msgid "File name"
+msgstr "檔案名稱"
+
+msgid "Output path"
+msgstr "檔案輸出資料夾"
 
