@@ -182,7 +182,9 @@ void start_toggled(GtkWidget* widget, void* ptr)
 
 		}
 
-		sprintf(command, "ffmpeg %s %s %s -threads 0 %s %s </dev/null", main_window.input, main_window.video, main_window.audio, main_window.url, ""/*main_window.file_output*/);
+		int number_of_threads = gtk_spin_button_get_value(GTK_SPIN_BUTTON(main_window.threads));
+
+		sprintf(command, "ffmpeg %s %s %s -threads %d %s %s </dev/null", main_window.input, main_window.video, main_window.audio, number_of_threads, main_window.url, ""/*main_window.file_output*/);
 		main_window.ffmpeg = run_cmd(command);
 		puts(command);
 	}
@@ -231,6 +233,7 @@ int main(int argc, char** argv)
 	main_window.mp4 	= GTK_WIDGET(gtk_builder_get_object(builder, "mp4"));
 	main_window.out_path 	= GTK_WIDGET(gtk_builder_get_object(builder, "out_path"));
 	main_window.out_filename= GTK_WIDGET(gtk_builder_get_object(builder, "out_filename"));
+	main_window.threads	= GTK_WIDGET(gtk_builder_get_object(builder, "threads"));
 
 
 	main_window.select_window 	= GTK_WIDGET(gtk_builder_get_object(builder, "select_window"));

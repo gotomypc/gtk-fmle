@@ -399,9 +399,9 @@
                               <object class="GtkFileChooserButton" id="out_path">
                                 <property name="visible">True</property>
                                 <property name="tooltip_text" translatable="yes">Output path</property>
-                                <property name="show_hidden">True</property>
                                 <property name="action">select-folder</property>
                                 <property name="use_preview_label">False</property>
+                                <property name="show_hidden">True</property>
                               </object>
                               <packing>
                                 <property name="position">1</property>
@@ -459,7 +459,7 @@
                 <child>
                   <object class="GtkTable" id="table2">
                     <property name="visible">True</property>
-                    <property name="n_rows">7</property>
+                    <property name="n_rows">8</property>
                     <property name="n_columns">4</property>
                     <property name="column_spacing">5</property>
                     <property name="row_spacing">5</property>
@@ -686,6 +686,36 @@
                     <child>
                       <placeholder/>
                     </child>
+                    <child>
+                      <placeholder/>
+                    </child>
+                    <child>
+                      <placeholder/>
+                    </child>
+                    <child>
+                      <object class="GtkLabel" id="label26">
+                        <property name="visible">True</property>
+                        <property name="label" translatable="yes">Threads</property>
+                      </object>
+                      <packing>
+                        <property name="top_attach">7</property>
+                        <property name="bottom_attach">8</property>
+                      </packing>
+                    </child>
+                    <child>
+                      <object class="GtkSpinButton" id="threads">
+                        <property name="visible">True</property>
+                        <property name="can_focus">True</property>
+                        <property name="invisible_char">&#x25CF;</property>
+                        <property name="adjustment">adjustment_threads</property>
+                      </object>
+                      <packing>
+                        <property name="left_attach">1</property>
+                        <property name="right_attach">2</property>
+                        <property name="top_attach">7</property>
+                        <property name="bottom_attach">8</property>
+                      </packing>
+                    </child>
                   </object>
                   <packing>
                     <property name="position">0</property>
@@ -893,6 +923,10 @@
   </object>
   <object class="GtkAdjustment" id="adjustment_latency">
     <property name="upper">10000</property>
+    <property name="step_increment">1</property>
+  </object>
+  <object class="GtkAdjustment" id="adjustment_threads">
+    <property name="upper">16</property>
     <property name="step_increment">1</property>
   </object>
 </interface>

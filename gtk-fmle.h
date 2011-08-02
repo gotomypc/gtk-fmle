@@ -42,6 +42,7 @@ struct MainWindow
 	GtkWidget*	ratetol;
 	GtkWidget*	crf;
 	GtkWidget*	latency;
+	GtkWidget*	threads;
 
 
 	GtkWidget*	mp4;

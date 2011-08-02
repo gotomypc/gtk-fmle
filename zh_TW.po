@@ -82,3 +82,5 @@ msgstr "檔案名稱"
 msgid "Output path"
 msgstr "檔案輸出資料夾"
 
+msgid "Threads"
+msgstr "執行緒"
