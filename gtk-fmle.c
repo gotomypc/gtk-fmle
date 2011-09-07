@@ -178,7 +178,7 @@ void start_toggled(GtkWidget* widget, void* ptr)
 			enable_mp4 = gtk_toggle_button_get_active(GTK_TOGGLE_BUTTON(main_window.mp4));
 			main_window.file_output[0] = 0;
 			if(enable_mp4)
-				sprintf(main_window.url, "-f mp4 %s/%s", gtk_file_chooser_get_current_folder(GTK_FILE_CHOOSER(main_window.out_path)), gtk_entry_get_text(GTK_ENTRY(main_window.out_filename)));
+				sprintf(main_window.url, "-y -f mp4 %s/%s", gtk_file_chooser_get_current_folder(GTK_FILE_CHOOSER(main_window.out_path)), gtk_entry_get_text(GTK_ENTRY(main_window.out_filename)));
 
 		}
 
