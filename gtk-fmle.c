@@ -155,7 +155,7 @@ void start_toggled(GtkWidget* widget, void* ptr)
 				sprintf(rate, "-ar %d", ar);
 			}
 
-			sprintf(main_window.audio, "-acodec libfaac -ab %dk %s", ab, rate);
+			sprintf(main_window.audio, "-acodec libfaac -ab %dk %s -async 1", ab, rate);
 
 		}
 
