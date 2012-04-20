@@ -43,7 +43,7 @@ struct MainWindow
 	GtkWidget*	crf;
 	GtkWidget*	latency;
 	GtkWidget*	threads;
-
+	GtkWidget*	volume;
 
 	GtkWidget*	mp4;
 	GtkWidget*	out_path;

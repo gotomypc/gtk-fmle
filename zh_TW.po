@@ -84,3 +84,7 @@ msgstr "檔案輸出資料夾"
 
 msgid "Threads"
 msgstr "執行緒"
+
+msgid "Volume adjustment"
+msgstr "音量調整"
+

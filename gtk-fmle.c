@@ -144,18 +144,19 @@ void start_toggled(GtkWidget* widget, void* ptr)
 
 		/* AAC settings */
 		{
-			int ab, ar;
+			int ab, ar, vol;
 			char rate[16] = {};
 
 			ab = gtk_spin_button_get_value(GTK_SPIN_BUTTON(main_window.ab));
 			ar = gtk_spin_button_get_value(GTK_SPIN_BUTTON(main_window.ar));
+			vol = gtk_spin_button_get_value(GTK_SPIN_BUTTON(main_window.volume));
 
 			if(ar)
 			{
 				sprintf(rate, "-ar %d", ar);
 			}
 
-			sprintf(main_window.audio, "-acodec libfaac -ab %dk %s -async 1", ab, rate);
+			sprintf(main_window.audio, "-vol %d -acodec libfaac -ab %dk %s -async 1", vol, ab, rate);
 
 		}
 
@@ -234,6 +235,7 @@ int main(int argc, char** argv)
 	main_window.out_path 	= GTK_WIDGET(gtk_builder_get_object(builder, "out_path"));
 	main_window.out_filename= GTK_WIDGET(gtk_builder_get_object(builder, "out_filename"));
 	main_window.threads	= GTK_WIDGET(gtk_builder_get_object(builder, "threads"));
+	main_window.volume	= GTK_WIDGET(gtk_builder_get_object(builder, "volume"));
 
 
 	main_window.select_window 	= GTK_WIDGET(gtk_builder_get_object(builder, "select_window"));
