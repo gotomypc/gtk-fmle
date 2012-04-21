@@ -1,15 +1,13 @@
 TARGET:=gtk-fmle
 
 SRC=$(wildcard *.c)
-OBJ=$(subst .c,.o,$(SRC))
+OBJ=gtk-fmle.o conf.o
 PREFIX=/usr
 
-
-
-all: $(TARGET)
+all: gtk-fmle-glade.h $(TARGET) $(TARGET).mo
 
 clean:
-	rm $(TARGET) *.o
+	rm -f $(TARGET) *.o gtk-fmle-glade.h rcconv $(TARGET).mo
 
 install:
 	cp $(TARGET) $(PREFIX)/bin
@@ -18,7 +16,20 @@ install:
 %.o: %.c
 	@echo "  CC	$<"
 	@$(CC) -c $< -o $@  $(CFLAGS) $(shell pkg-config --cflags gtk+-2.0) -Wall
-	
+
+rcconv: rcconv.o
+	@echo "  LD	$@"
+	@$(CC) $^ -o $@
+
+gtk-fmle-glade.h: gtk-fmle.glade rcconv
+	@echo "  rcconv	$@"
+	@./rcconv $< gtk_fmle_glade > $@
+
+$(TARGET).mo: zh_TW.po
+	@echo "  msgfmt $@"
+	@msgfmt $< -o $@
+
 $(TARGET): $(OBJ)
 	@echo "  LD	$@"
 	@$(CC) $^ -o $@ $(shell pkg-config --libs gtk+-2.0) -export-dynamic
+
