@@ -177,7 +177,7 @@ void start_toggled(GtkWidget* widget, void* ptr)
 		int number_of_threads = gtk_spin_button_get_value(GTK_SPIN_BUTTON(main_window.threads));
 
 		sprintf(command, "ffmpeg %s %s %s -threads %d %s %s </dev/null", main_window.input, main_window.video, main_window.audio, number_of_threads, main_window.url, ""/*main_window.file_output*/);
-		//main_window.ffmpeg = run_cmd(command);
+		main_window.ffmpeg = run_cmd(command);
 		puts(command);
 	}
 	else
