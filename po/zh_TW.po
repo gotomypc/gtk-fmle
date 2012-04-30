@@ -1,0 +1,203 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: gtk-fmle\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2012-04-30 13:01+0800\n"
+"PO-Revision-Date: \n"
+"Last-Translator: Ruei-Yuan Lu <RueiYuan.Lu@gmail.com>\n"
+"Language-Team: \n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Poedit-Country: TAIWAN\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+#: ../gtk-fmle.glade.h:1
+msgid ","
+msgstr ","
+
+#: ../gtk-fmle.glade.h:2
+msgid "<b>AAC Options</b>"
+msgstr "<b>AAC 選項</b>"
+
+#: ../gtk-fmle.glade.h:3
+msgid "<b>Encoding Options</b>"
+msgstr "<b>編碼選項</b>"
+
+#: ../gtk-fmle.glade.h:4
+msgid "<b>File Output</b>"
+msgstr "<b>檔案輸出</b>"
+
+#: ../gtk-fmle.glade.h:5
+msgid "<b>Flash Media Server</b>"
+msgstr "<b>Flash 媒體伺服器</b>"
+
+#: ../gtk-fmle.glade.h:6
+msgid "<b>Input</b>"
+msgstr "<b>輸入</b>"
+
+#: ../gtk-fmle.glade.h:7
+msgid "<b>x264 Options</b>"
+msgstr "<b>x264 選項</b>"
+
+#: ../gtk-fmle.glade.h:8
+msgid "ALSA device"
+msgstr "ALSA 裝置"
+
+#: ../gtk-fmle.glade.h:9
+msgid "Add latency to audio stream(in ms)"
+msgstr "加入延遲至音訊串流(毫秒)"
+
+#: ../gtk-fmle.glade.h:10
+msgid "Assign zero to use default value"
+msgstr "0 表示預設值"
+
+#: ../gtk-fmle.glade.h:11
+msgid "Bitrate"
+msgstr "位元率"
+
+#: ../gtk-fmle.glade.h:12
+msgid "Desktop"
+msgstr "桌面"
+
+#: ../gtk-fmle.glade.h:13
+msgid "Determine how many threads to use. (0 = Single thread)"
+msgstr "設定要使用的執行緒數量。(0 = 單執行緒)"
+
+#: ../gtk-fmle.glade.h:14
+msgid "File name"
+msgstr "檔案名稱"
+
+#: ../gtk-fmle.glade.h:15
+msgid "Flash Media Live Encoder"
+msgstr "Flash 媒體實況編碼"
+
+#: ../gtk-fmle.glade.h:16
+msgid "Frame rate"
+msgstr "畫面速率"
+
+#: ../gtk-fmle.glade.h:17
+msgid "Increase or decrease the output volume. (256 = 1x;512 = 2x)"
+msgstr "增加或減少輸出音量。(256 = 1x;512 = 2x)"
+
+#: ../gtk-fmle.glade.h:18
+msgid "Latency"
+msgstr "延遲"
+
+#: ../gtk-fmle.glade.h:19
+msgid "Mode"
+msgstr "模式"
+
+#: ../gtk-fmle.glade.h:20
+msgid "Offset"
+msgstr "位移"
+
+#: ../gtk-fmle.glade.h:21
+msgid "Output path"
+msgstr "輸出路徑"
+
+#: ../gtk-fmle.glade.h:22
+msgid "Override options"
+msgstr "覆載選項"
+
+#: ../gtk-fmle.glade.h:23
+msgid "Preset"
+msgstr "設定集"
+
+#: ../gtk-fmle.glade.h:24
+msgid "Resolution"
+msgstr "解析度"
+
+#: ../gtk-fmle.glade.h:25
+msgid "Sample rate"
+msgstr "取樣率"
+
+#: ../gtk-fmle.glade.h:26
+msgid "Some extra options that override the preset."
+msgstr "覆載設定集的額外設定值。"
+
+#: ../gtk-fmle.glade.h:27
+msgid "Start"
+msgstr "開始"
+
+#: ../gtk-fmle.glade.h:28
+msgid "Stream"
+msgstr "串流密鑰"
+
+#: ../gtk-fmle.glade.h:29
+msgid "Threads"
+msgstr "執行緒"
+
+#: ../gtk-fmle.glade.h:30
+msgid "URL"
+msgstr "URL 網址"
+
+#: ../gtk-fmle.glade.h:31
+msgid "Unit: ms"
+msgstr "單位：毫秒"
+
+#: ../gtk-fmle.glade.h:32
+msgid "Volume adjustment"
+msgstr "音量調整"
+
+#: ../gtk-fmle.glade.h:33
+msgid "Window"
+msgstr "視窗"
+
+#: ../gtk-fmle.glade.h:34
+msgid "Write to MP4 file"
+msgstr "寫到 MP4 檔"
+
+#: ../gtk-fmle.glade.h:35
+msgid "default"
+msgstr "default"
+
+#: ../gtk-fmle.glade.h:36
+msgid "fast"
+msgstr "fast"
+
+#: ../gtk-fmle.glade.h:37
+msgid "faster"
+msgstr "faster"
+
+#: ../gtk-fmle.glade.h:38
+msgid "medium"
+msgstr "medium"
+
+#: ../gtk-fmle.glade.h:39
+msgid "placebo"
+msgstr "placebo"
+
+#: ../gtk-fmle.glade.h:40
+msgid "rtmp://live-sin-backup.justin.tv/app"
+msgstr "rtmp://live-sin-backup.justin.tv/app"
+
+#: ../gtk-fmle.glade.h:41
+msgid "slow"
+msgstr "slow"
+
+#: ../gtk-fmle.glade.h:42
+msgid "slower"
+msgstr "slower"
+
+#: ../gtk-fmle.glade.h:43
+msgid "superfast"
+msgstr "superfast"
+
+#: ../gtk-fmle.glade.h:44
+msgid "ultrafast"
+msgstr "ultrafast"
+
+#: ../gtk-fmle.glade.h:45
+msgid "veryfast"
+msgstr "veryfast"
+
+#: ../gtk-fmle.glade.h:46
+msgid "veryslow"
+msgstr "veryslow"
+
+#: ../gtk-fmle.glade.h:47
+msgid "x"
+msgstr "x"
+

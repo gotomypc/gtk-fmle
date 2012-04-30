@@ -399,9 +399,9 @@
                               <object class="GtkFileChooserButton" id="out_path">
                                 <property name="visible">True</property>
                                 <property name="tooltip_text" translatable="yes">Output path</property>
-                                <property name="action">select-folder</property>
                                 <property name="use_preview_label">False</property>
                                 <property name="show_hidden">True</property>
+                                <property name="action">select-folder</property>
                               </object>
                               <packing>
                                 <property name="position">1</property>
@@ -459,7 +459,7 @@
                 <child>
                   <object class="GtkTable" id="table2">
                     <property name="visible">True</property>
-                    <property name="n_rows">8</property>
+                    <property name="n_rows">6</property>
                     <property name="n_columns">4</property>
                     <property name="column_spacing">5</property>
                     <property name="row_spacing">5</property>
@@ -485,77 +485,13 @@
                       </packing>
                     </child>
                     <child>
-                      <object class="GtkEntry" id="vpre">
-                        <property name="visible">True</property>
-                        <property name="can_focus">True</property>
-                        <property name="invisible_char">&#x25CF;</property>
-                        <property name="text" translatable="yes">medium</property>
-                      </object>
-                      <packing>
-                        <property name="left_attach">1</property>
-                        <property name="right_attach">4</property>
-                        <property name="top_attach">1</property>
-                        <property name="bottom_attach">2</property>
-                      </packing>
-                    </child>
-                    <child>
-                      <object class="GtkLabel" id="label10">
-                        <property name="visible">True</property>
-                        <property name="label" translatable="yes">Bitrate</property>
-                      </object>
-                      <packing>
-                        <property name="top_attach">2</property>
-                        <property name="bottom_attach">3</property>
-                      </packing>
-                    </child>
-                    <child>
-                      <object class="GtkLabel" id="label11">
-                        <property name="visible">True</property>
-                        <property name="label" translatable="yes">Rate tolerance</property>
-                      </object>
-                      <packing>
-                        <property name="top_attach">3</property>
-                        <property name="bottom_attach">4</property>
-                      </packing>
-                    </child>
-                    <child>
-                      <object class="GtkSpinButton" id="bitrate">
-                        <property name="visible">True</property>
-                        <property name="can_focus">True</property>
-                        <property name="invisible_char">&#x25CF;</property>
-                        <property name="adjustment">adjustment_bitrate</property>
-                        <property name="numeric">True</property>
-                      </object>
-                      <packing>
-                        <property name="left_attach">1</property>
-                        <property name="right_attach">2</property>
-                        <property name="top_attach">2</property>
-                        <property name="bottom_attach">3</property>
-                      </packing>
-                    </child>
-                    <child>
-                      <object class="GtkSpinButton" id="ratetol">
-                        <property name="visible">True</property>
-                        <property name="can_focus">True</property>
-                        <property name="invisible_char">&#x25CF;</property>
-                        <property name="adjustment">adjustment_ratetol</property>
-                        <property name="numeric">True</property>
-                      </object>
-                      <packing>
-                        <property name="left_attach">1</property>
-                        <property name="right_attach">2</property>
-                        <property name="top_attach">3</property>
-                        <property name="bottom_attach">4</property>
-                      </packing>
-                    </child>
-                    <child>
                       <object class="GtkLabel" id="label12">
                         <property name="visible">True</property>
                         <property name="label" translatable="yes">Resolution</property>
                       </object>
                       <packing>
-                        <property name="top_attach">5</property>
-                        <property name="bottom_attach">6</property>
+                        <property name="top_attach">3</property>
+                        <property name="bottom_attach">4</property>
                       </packing>
                     </child>
                     <child>
@@ -570,8 +506,8 @@
                       <packing>
                         <property name="left_attach">1</property>
                         <property name="right_attach">2</property>
-                        <property name="top_attach">5</property>
-                        <property name="bottom_attach">6</property>
+                        <property name="top_attach">3</property>
+                        <property name="bottom_attach">4</property>
                       </packing>
                     </child>
                     <child>
@@ -582,15 +518,24 @@
                       <packing>
                         <property name="left_attach">2</property>
                         <property name="right_attach">3</property>
-                        <property name="top_attach">5</property>
-                        <property name="bottom_attach">6</property>
+                        <property name="top_attach">3</property>
+                        <property name="bottom_attach">4</property>
+                      </packing>
+                    </child>
+                    <child>
+                      <object class="GtkLabel" id="label23">
+                        <property name="visible">True</property>
+                        <property name="label" translatable="yes">Override options</property>
+                      </object>
+                      <packing>
+                        <property name="top_attach">2</property>
+                        <property name="bottom_attach">3</property>
                       </packing>
                     </child>
                     <child>
                       <object class="GtkSpinButton" id="outh">
                         <property name="visible">True</property>
                         <property name="can_focus">True</property>
-                        <property name="tooltip_text" translatable="yes">Assign zero to use default value</property>
                         <property name="invisible_char">&#x25CF;</property>
                         <property name="adjustment">adjustment_outy</property>
                         <property name="numeric">True</property>
@@ -598,8 +543,8 @@
                       <packing>
                         <property name="left_attach">3</property>
                         <property name="right_attach">4</property>
-                        <property name="top_attach">5</property>
-                        <property name="bottom_attach">6</property>
+                        <property name="top_attach">3</property>
+                        <property name="bottom_attach">4</property>
                       </packing>
                     </child>
                     <child>
@@ -608,43 +553,17 @@
                         <property name="label" translatable="yes">Frame rate</property>
                       </object>
                       <packing>
-                        <property name="top_attach">6</property>
-                        <property name="bottom_attach">7</property>
+                        <property name="top_attach">4</property>
+                        <property name="bottom_attach">5</property>
                       </packing>
                     </child>
                     <child>
                       <object class="GtkSpinButton" id="outfps">
                         <property name="visible">True</property>
                         <property name="can_focus">True</property>
-                        <property name="tooltip_text" translatable="yes">Assign zero to use default value</property>
                         <property name="invisible_char">&#x25CF;</property>
                         <property name="adjustment">adjustment_outfps</property>
                         <property name="numeric">True</property>
-                      </object>
-                      <packing>
-                        <property name="left_attach">1</property>
-                        <property name="right_attach">2</property>
-                        <property name="top_attach">6</property>
-                        <property name="bottom_attach">7</property>
-                      </packing>
-                    </child>
-                    <child>
-                      <object class="GtkLabel" id="label23">
-                        <property name="visible">True</property>
-                        <property name="label" translatable="yes">CRF</property>
-                      </object>
-                      <packing>
-                        <property name="top_attach">4</property>
-                        <property name="bottom_attach">5</property>
-                      </packing>
-                    </child>
-                    <child>
-                      <object class="GtkSpinButton" id="crf">
-                        <property name="visible">True</property>
-                        <property name="can_focus">True</property>
-                        <property name="tooltip_text" translatable="yes">Assign non-zero value to disable constant bitrate mode</property>
-                        <property name="invisible_char">&#x25CF;</property>
-                        <property name="adjustment">adjustment_crf</property>
                       </object>
                       <packing>
                         <property name="left_attach">1</property>
@@ -659,41 +578,51 @@
                         <property name="label" translatable="yes">Threads</property>
                       </object>
                       <packing>
-                        <property name="top_attach">7</property>
-                        <property name="bottom_attach">8</property>
+                        <property name="top_attach">5</property>
+                        <property name="bottom_attach">6</property>
                       </packing>
                     </child>
                     <child>
                       <object class="GtkSpinButton" id="threads">
                         <property name="visible">True</property>
                         <property name="can_focus">True</property>
+                        <property name="tooltip_text" translatable="yes">Determine how many threads to use. (0 = Single thread)</property>
                         <property name="invisible_char">&#x25CF;</property>
                         <property name="adjustment">adjustment_threads</property>
                       </object>
                       <packing>
                         <property name="left_attach">1</property>
                         <property name="right_attach">2</property>
-                        <property name="top_attach">7</property>
-                        <property name="bottom_attach">8</property>
+                        <property name="top_attach">5</property>
+                        <property name="bottom_attach">6</property>
                       </packing>
                     </child>
                     <child>
-                      <placeholder/>
+                      <object class="GtkEntry" id="options">
+                        <property name="visible">True</property>
+                        <property name="can_focus">True</property>
+                        <property name="tooltip_text" translatable="yes">Some extra options that override the preset.</property>
+                        <property name="invisible_char">&#x25CF;</property>
+                      </object>
+                      <packing>
+                        <property name="left_attach">1</property>
+                        <property name="right_attach">4</property>
+                        <property name="top_attach">2</property>
+                        <property name="bottom_attach">3</property>
+                      </packing>
                     </child>
                     <child>
-                      <placeholder/>
-                    </child>
-                    <child>
-                      <placeholder/>
-                    </child>
-                    <child>
-                      <placeholder/>
-                    </child>
-                    <child>
-                      <placeholder/>
-                    </child>
-                    <child>
-                      <placeholder/>
+                      <object class="GtkComboBox" id="preset">
+                        <property name="visible">True</property>
+                        <property name="model">presetlist</property>
+                        <property name="active">5</property>
+                      </object>
+                      <packing>
+                        <property name="left_attach">1</property>
+                        <property name="right_attach">4</property>
+                        <property name="top_attach">1</property>
+                        <property name="bottom_attach">2</property>
+                      </packing>
                     </child>
                     <child>
                       <placeholder/>
@@ -814,6 +743,7 @@
                       <object class="GtkSpinButton" id="latency">
                         <property name="visible">True</property>
                         <property name="can_focus">True</property>
+                        <property name="tooltip_text" translatable="yes">Add latency to audio stream(in ms)</property>
                         <property name="invisible_char">&#x25CF;</property>
                         <property name="adjustment">adjustment_latency</property>
                       </object>
@@ -823,9 +753,6 @@
                         <property name="top_attach">3</property>
                         <property name="bottom_attach">4</property>
                       </packing>
-                    </child>
-                    <child>
-                      <placeholder/>
                     </child>
                     <child>
                       <object class="GtkLabel" id="label27">
@@ -841,6 +768,7 @@
                       <object class="GtkSpinButton" id="volume">
                         <property name="visible">True</property>
                         <property name="can_focus">True</property>
+                        <property name="tooltip_text" translatable="yes">Increase or decrease the output volume. (256 = 1x;512 = 2x)</property>
                         <property name="invisible_char">&#x25CF;</property>
                         <property name="adjustment">adjustment_volume</property>
                         <property name="numeric">True</property>
@@ -851,6 +779,9 @@
                         <property name="top_attach">4</property>
                         <property name="bottom_attach">5</property>
                       </packing>
+                    </child>
+                    <child>
+                      <placeholder/>
                     </child>
                   </object>
                   <packing>
@@ -889,16 +820,6 @@
         </child>
       </object>
     </child>
-  </object>
-  <object class="GtkAdjustment" id="adjustment_bitrate">
-    <property name="upper">100000</property>
-    <property name="value">800</property>
-    <property name="step_increment">1</property>
-  </object>
-  <object class="GtkAdjustment" id="adjustment_ratetol">
-    <property name="upper">100000</property>
-    <property name="value">400</property>
-    <property name="step_increment">1</property>
   </object>
   <object class="GtkAdjustment" id="adjustment_outx">
     <property name="upper">10000</property>
@@ -942,10 +863,6 @@
     <property name="value">60</property>
     <property name="step_increment">1</property>
   </object>
-  <object class="GtkAdjustment" id="adjustment_crf">
-    <property name="upper">51</property>
-    <property name="step_increment">1</property>
-  </object>
   <object class="GtkAdjustment" id="adjustment_latency">
     <property name="upper">10000</property>
     <property name="step_increment">1</property>
@@ -956,7 +873,45 @@
   </object>
   <object class="GtkAdjustment" id="adjustment_volume">
     <property name="upper">1024</property>
-    <property name="value">256</property>
+    <property name="value">512</property>
     <property name="step_increment">1</property>
+  </object>
+  <object class="GtkListStore" id="presetlist">
+    <columns>
+      <!-- column-name Preset -->
+      <column type="gchararray"/>
+    </columns>
+    <data>
+      <row>
+        <col id="0" translatable="yes">ultrafast</col>
+      </row>
+      <row>
+        <col id="0" translatable="yes">superfast</col>
+      </row>
+      <row>
+        <col id="0" translatable="yes">veryfast</col>
+      </row>
+      <row>
+        <col id="0" translatable="yes">faster</col>
+      </row>
+      <row>
+        <col id="0" translatable="yes">fast</col>
+      </row>
+      <row>
+        <col id="0" translatable="yes">medium</col>
+      </row>
+      <row>
+        <col id="0" translatable="yes">slow</col>
+      </row>
+      <row>
+        <col id="0" translatable="yes">slower</col>
+      </row>
+      <row>
+        <col id="0" translatable="yes">veryslow</col>
+      </row>
+      <row>
+        <col id="0" translatable="yes">placebo</col>
+      </row>
+    </data>
   </object>
 </interface>

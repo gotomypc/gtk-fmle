@@ -105,20 +105,18 @@ void start_toggled(GtkWidget* widget, void* ptr)
 
 		/* x264 settings */
 		{
-			int w, h, f, b, bt, crf;
+			int w, h, f;
 			char resol[32] = {};
 			char fps[16] = {};
-			char mode[64] = {};
+			const char* options = NULL;
 			const char* preset = NULL;
 
-			preset = gtk_entry_get_text(GTK_ENTRY(main_window.vpre));
+			preset = gtk_combo_box_get_active_text(GTK_COMBO_BOX(main_window.preset));
 
 			w = gtk_spin_button_get_value(GTK_SPIN_BUTTON(main_window.outw));
 			h = gtk_spin_button_get_value(GTK_SPIN_BUTTON(main_window.outh));
 			f = gtk_spin_button_get_value(GTK_SPIN_BUTTON(main_window.outfps));
-			b = gtk_spin_button_get_value(GTK_SPIN_BUTTON(main_window.bitrate));
-			bt = gtk_spin_button_get_value(GTK_SPIN_BUTTON(main_window.ratetol));
-			crf = gtk_spin_button_get_value(GTK_SPIN_BUTTON(main_window.crf));
+			options = gtk_entry_get_text(GTK_ENTRY(main_window.options));
 
 
 			if(w&&h)
@@ -131,15 +129,8 @@ void start_toggled(GtkWidget* widget, void* ptr)
 				sprintf(fps, "-r %d", f);
 			}
 
-			if(crf)
-			{
-				sprintf(mode, "-crf %d", crf);
-			}else
-			{
-				sprintf(mode, "-b %dk -bt %dk", b, bt);
-			}
 
-			sprintf(main_window.video, "-vcodec libx264 -vpre %s %s %s %s", preset, resol, fps, mode);
+			sprintf(main_window.video, "-vcodec libx264 -preset %s %s %s %s", preset, options, resol, fps);
 		}
 
 		/* AAC settings */
@@ -186,7 +177,7 @@ void start_toggled(GtkWidget* widget, void* ptr)
 		int number_of_threads = gtk_spin_button_get_value(GTK_SPIN_BUTTON(main_window.threads));
 
 		sprintf(command, "ffmpeg %s %s %s -threads %d %s %s </dev/null", main_window.input, main_window.video, main_window.audio, number_of_threads, main_window.url, ""/*main_window.file_output*/);
-		main_window.ffmpeg = run_cmd(command);
+		//main_window.ffmpeg = run_cmd(command);
 		puts(command);
 	}
 	else
@@ -201,6 +192,7 @@ void start_toggled(GtkWidget* widget, void* ptr)
 int main(int argc, char** argv)
 {
 	GtkBuilder* builder = NULL;
+	GtkCellRenderer* cell = NULL;
 
 	memset(&main_window, 0, sizeof(main_window));
 	bindtextdomain("gtk-fmle", "/usr/share/locale");
@@ -208,7 +200,6 @@ int main(int argc, char** argv)
 
 	builder = gtk_builder_new();
 	gtk_builder_set_translation_domain(builder, "gtk-fmle");
-	//gtk_builder_add_from_file(builder, "gtk-fmle.glade", NULL);
 	gtk_builder_add_from_string(builder, gtk_fmle_glade, strlen(gtk_fmle_glade), NULL);
 
 
@@ -223,13 +214,11 @@ int main(int argc, char** argv)
 	main_window.ab 		= GTK_WIDGET(gtk_builder_get_object(builder, "ab"));
 	main_window.ar 		= GTK_WIDGET(gtk_builder_get_object(builder, "ar"));
 	main_window.alsa	= GTK_WIDGET(gtk_builder_get_object(builder, "alsa"));
-	main_window.vpre	= GTK_WIDGET(gtk_builder_get_object(builder, "vpre"));
+	main_window.preset	= GTK_WIDGET(gtk_builder_get_object(builder, "preset"));
+	main_window.options	= GTK_WIDGET(gtk_builder_get_object(builder, "options"));
 	main_window.outw 	= GTK_WIDGET(gtk_builder_get_object(builder, "outw"));
 	main_window.outh 	= GTK_WIDGET(gtk_builder_get_object(builder, "outh"));
 	main_window.outfps 	= GTK_WIDGET(gtk_builder_get_object(builder, "outfps"));
-	main_window.bitrate 	= GTK_WIDGET(gtk_builder_get_object(builder, "bitrate"));
-	main_window.ratetol 	= GTK_WIDGET(gtk_builder_get_object(builder, "ratetol"));
-	main_window.crf 	= GTK_WIDGET(gtk_builder_get_object(builder, "crf"));
 	main_window.latency 	= GTK_WIDGET(gtk_builder_get_object(builder, "latency"));
 	main_window.mp4 	= GTK_WIDGET(gtk_builder_get_object(builder, "mp4"));
 	main_window.out_path 	= GTK_WIDGET(gtk_builder_get_object(builder, "out_path"));
@@ -241,6 +230,9 @@ int main(int argc, char** argv)
 	main_window.select_window 	= GTK_WIDGET(gtk_builder_get_object(builder, "select_window"));
 	main_window.select_desktop 	= GTK_WIDGET(gtk_builder_get_object(builder, "select_desktop"));
 
+	cell = gtk_cell_renderer_text_new();
+	gtk_cell_layout_pack_start(GTK_CELL_LAYOUT(main_window.preset), cell, TRUE);
+	gtk_cell_layout_set_attributes(GTK_CELL_LAYOUT(main_window.preset), cell, "text", 0, NULL);
 
 	gtk_builder_connect_signals(builder, NULL);
 

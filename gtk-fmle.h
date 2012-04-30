@@ -34,13 +34,11 @@ struct MainWindow
 	GtkWidget*	ab;
 	GtkWidget*	ar;
 
-	GtkWidget*	vpre;
+	GtkWidget*	preset;
+	GtkWidget*	options;
 	GtkWidget*	outw;
 	GtkWidget*	outh;
 	GtkWidget*	outfps;
-	GtkWidget*	bitrate;
-	GtkWidget*	ratetol;
-	GtkWidget*	crf;
 	GtkWidget*	latency;
 	GtkWidget*	threads;
 	GtkWidget*	volume;

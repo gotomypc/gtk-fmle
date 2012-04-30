@@ -25,7 +25,10 @@ gtk-fmle-glade.h: gtk-fmle.glade rcconv
 	@echo "  rcconv	$@"
 	@./rcconv $< gtk_fmle_glade > $@
 
-$(TARGET).mo: zh_TW.po
+pot:
+	+TARGET=$(TARGET) make -C po
+
+$(TARGET).mo: po/zh_TW.po
 	@echo "  msgfmt $@"
 	@msgfmt $< -o $@
 

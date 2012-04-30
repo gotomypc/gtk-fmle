@@ -1,0 +1,206 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2012-04-30 13:01+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=CHARSET\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../gtk-fmle.glade.h:1
+msgid ","
+msgstr ""
+
+#: ../gtk-fmle.glade.h:2
+msgid "<b>AAC Options</b>"
+msgstr ""
+
+#: ../gtk-fmle.glade.h:3
+msgid "<b>Encoding Options</b>"
+msgstr ""
+
+#: ../gtk-fmle.glade.h:4
+msgid "<b>File Output</b>"
+msgstr ""
+
+#: ../gtk-fmle.glade.h:5
+msgid "<b>Flash Media Server</b>"
+msgstr ""
+
+#: ../gtk-fmle.glade.h:6
+msgid "<b>Input</b>"
+msgstr ""
+
+#: ../gtk-fmle.glade.h:7
+msgid "<b>x264 Options</b>"
+msgstr ""
+
+#: ../gtk-fmle.glade.h:8
+msgid "ALSA device"
+msgstr ""
+
+#: ../gtk-fmle.glade.h:9
+msgid "Add latency to audio stream(in ms)"
+msgstr ""
+
+#: ../gtk-fmle.glade.h:10
+msgid "Assign zero to use default value"
+msgstr ""
+
+#: ../gtk-fmle.glade.h:11
+msgid "Bitrate"
+msgstr ""
+
+#: ../gtk-fmle.glade.h:12
+msgid "Desktop"
+msgstr ""
+
+#: ../gtk-fmle.glade.h:13
+msgid "Determine how many threads to use. (0 = Single thread)"
+msgstr ""
+
+#: ../gtk-fmle.glade.h:14
+msgid "File name"
+msgstr ""
+
+#: ../gtk-fmle.glade.h:15
+msgid "Flash Media Live Encoder"
+msgstr ""
+
+#: ../gtk-fmle.glade.h:16
+msgid "Frame rate"
+msgstr ""
+
+#: ../gtk-fmle.glade.h:17
+msgid "Increase or decrease the output volume. (256 = 1x;512 = 2x)"
+msgstr ""
+
+#: ../gtk-fmle.glade.h:18
+msgid "Latency"
+msgstr ""
+
+#: ../gtk-fmle.glade.h:19
+msgid "Mode"
+msgstr ""
+
+#: ../gtk-fmle.glade.h:20
+msgid "Offset"
+msgstr ""
+
+#: ../gtk-fmle.glade.h:21
+msgid "Output path"
+msgstr ""
+
+#: ../gtk-fmle.glade.h:22
+msgid "Override options"
+msgstr ""
+
+#: ../gtk-fmle.glade.h:23
+msgid "Preset"
+msgstr ""
+
+#: ../gtk-fmle.glade.h:24
+msgid "Resolution"
+msgstr ""
+
+#: ../gtk-fmle.glade.h:25
+msgid "Sample rate"
+msgstr ""
+
+#: ../gtk-fmle.glade.h:26
+msgid "Some extra options that override the preset."
+msgstr ""
+
+#: ../gtk-fmle.glade.h:27
+msgid "Start"
+msgstr ""
+
+#: ../gtk-fmle.glade.h:28
+msgid "Stream"
+msgstr ""
+
+#: ../gtk-fmle.glade.h:29
+msgid "Threads"
+msgstr ""
+
+#: ../gtk-fmle.glade.h:30
+msgid "URL"
+msgstr ""
+
+#: ../gtk-fmle.glade.h:31
+msgid "Unit: ms"
+msgstr ""
+
+#: ../gtk-fmle.glade.h:32
+msgid "Volume adjustment"
+msgstr ""
+
+#: ../gtk-fmle.glade.h:33
+msgid "Window"
+msgstr ""
+
+#: ../gtk-fmle.glade.h:34
+msgid "Write to MP4 file"
+msgstr ""
+
+#: ../gtk-fmle.glade.h:35
+msgid "default"
+msgstr ""
+
+#: ../gtk-fmle.glade.h:36
+msgid "fast"
+msgstr ""
+
+#: ../gtk-fmle.glade.h:37
+msgid "faster"
+msgstr ""
+
+#: ../gtk-fmle.glade.h:38
+msgid "medium"
+msgstr ""
+
+#: ../gtk-fmle.glade.h:39
+msgid "placebo"
+msgstr ""
+
+#: ../gtk-fmle.glade.h:40
+msgid "rtmp://live-sin-backup.justin.tv/app"
+msgstr ""
+
+#: ../gtk-fmle.glade.h:41
+msgid "slow"
+msgstr ""
+
+#: ../gtk-fmle.glade.h:42
+msgid "slower"
+msgstr ""
+
+#: ../gtk-fmle.glade.h:43
+msgid "superfast"
+msgstr ""
+
+#: ../gtk-fmle.glade.h:44
+msgid "ultrafast"
+msgstr ""
+
+#: ../gtk-fmle.glade.h:45
+msgid "veryfast"
+msgstr ""
+
+#: ../gtk-fmle.glade.h:46
+msgid "veryslow"
+msgstr ""
+
+#: ../gtk-fmle.glade.h:47
+msgid "x"
+msgstr ""
