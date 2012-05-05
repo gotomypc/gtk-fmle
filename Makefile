@@ -7,7 +7,7 @@ PREFIX=/usr
 all: gtk-fmle-glade.h $(TARGET) $(TARGET).mo
 
 clean:
-	rm -f $(TARGET) *.o gtk-fmle-glade.h rcconv $(TARGET).mo
+	rm -f $(TARGET) *.o gtk-fmle-glade.h $(TARGET).mo
 
 install:
 	cp $(TARGET) $(PREFIX)/bin
@@ -17,13 +17,9 @@ install:
 	@echo "  CC	$<"
 	@$(CC) -c $< -o $@  $(CFLAGS) $(shell pkg-config --cflags gtk+-2.0) -Wall
 
-rcconv: rcconv.o
-	@echo "  LD	$@"
-	@$(CC) $^ -o $@
-
-gtk-fmle-glade.h: gtk-fmle.glade rcconv
-	@echo "  rcconv	$@"
-	@./rcconv $< gtk_fmle_glade > $@
+gtk-fmle-glade.h: gtk-fmle.glade
+	@echo "  xxd	$@"
+	@xxd -i $< $@
 
 pot:
 	+TARGET=$(TARGET) make -C po

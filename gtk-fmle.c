@@ -200,7 +200,7 @@ int main(int argc, char** argv)
 
 	builder = gtk_builder_new();
 	gtk_builder_set_translation_domain(builder, "gtk-fmle");
-	gtk_builder_add_from_string(builder, gtk_fmle_glade, strlen(gtk_fmle_glade), NULL);
+	gtk_builder_add_from_string(builder, (gchar*)gtk_fmle_glade, gtk_fmle_glade_len, NULL);
 
 
 	main_window.window 	= GTK_WIDGET(gtk_builder_get_object(builder, "window"));
