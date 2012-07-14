@@ -100,7 +100,7 @@ void start_toggled(GtkWidget* widget, void* ptr)
 
 			device = gtk_entry_get_text(GTK_ENTRY(main_window.alsa));
 
-			sprintf(main_window.input, "-f x11grab -s %dx%d -r %d -i :0.0+%d,%d -f alsa -ac 2 -itsoffset %.2f -i %s", w, h, fps, x, y, latency, device);
+			sprintf(main_window.input, "-f x11grab -s %dx%d -r %d -i :0.0+%d,%d -f pulse -ac 2 -itsoffset %.2f -i %s", w, h, fps, x, y, latency, device);
 		}
 
 		/* x264 settings */
@@ -147,7 +147,7 @@ void start_toggled(GtkWidget* widget, void* ptr)
 				sprintf(rate, "-ar %d", ar);
 			}
 
-			sprintf(main_window.audio, "-vol %d -acodec libfaac -ab %dk %s", vol, ab, rate);
+			sprintf(main_window.audio, "-vol %d -acodec aac -ab %dk %s -strict experimental", vol, ab, rate);
 
 		}
 
@@ -176,7 +176,7 @@ void start_toggled(GtkWidget* widget, void* ptr)
 
 		int number_of_threads = gtk_spin_button_get_value(GTK_SPIN_BUTTON(main_window.threads));
 
-		sprintf(command, "ffmpeg %s %s %s -threads %d %s %s </dev/null", main_window.input, main_window.video, main_window.audio, number_of_threads, main_window.url, ""/*main_window.file_output*/);
+		sprintf(command, "avconv %s %s %s -threads %d %s %s </dev/null", main_window.input, main_window.video, main_window.audio, number_of_threads, main_window.url, ""/*main_window.file_output*/);
 		main_window.ffmpeg = run_cmd(command);
 		puts(command);
 	}
