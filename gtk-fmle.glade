@@ -835,7 +835,7 @@
   </object>
   <object class="GtkAdjustment" id="adjustment_ab">
     <property name="upper">1000</property>
-    <property name="value">96</property>
+    <property name="value">128</property>
     <property name="step_increment">1</property>
   </object>
   <object class="GtkAdjustment" id="adjustment_ar">
